@@ -1,0 +1,444 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(./img/Background/main.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 10%;
+  background-color: #24252a;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.wrapperAll {
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.850em;
+  padding: 3em 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.wrapper:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+
+/*TITLE*/
+
+h1 {
+  padding-bottom: 1em;
+  font-size: 140%;
+  font-family: Arial;
+  color: #4527a0;
+}
+
+.buttonLine {
+  float: right;
+  color: #ff8f00;
+  padding: .5em 1.2em;
+  border: solid 1px #ff8f00;
+  border-radius: 20px;
+}
+
+.buttonLine:hover {
+  background: #ff8f00;
+  color: #f7f7f7;
+  transition: all ease-in-out .3s;
+}
+
+
+/*SLIDER - COMPLETE*/
+
+.sliderComplete {
+  position: relative;
+}
+
+
+/*Slider*/
+
+.slider {
+  width: 300%;
+  transition: all .5s;
+}
+
+.slider li {
+  display: inline-block;
+  width: 200px;
+  margin: 0 1%;
+  padding-bottom: 2em;
+}
+
+.slider li:first-child {
+  margin-left: 0;
+}
+
+
+/*Content*/
+
+.slider li>* {
+  max-width: 100%;
+}
+
+
+/*Cover*/
+
+.slider li .cover {
+  position: relative;
+  display: inline-block;
+  border-radius: 6px;
+  b ox-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.slider li .cover img {
+  display: block;
+  width: 100%;
+}
+
+.slider li .cover:before {
+  display: block;
+  content: ' ';
+  background: rgba(247, 247, 247, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider li .cover:hover:before {
+  background: rgba(247, 247, 247, .5);
+  transition: all .2s;
+}
+
+
+/*Informations*/
+
+.slider li p {
+  line-height: 1.3;
+  color: #38373a;
+}
+
+.slider li p a {
+  color: #ff8f00;
+}
+
+
+/*Buttons*/
+
+
+/*
+				The transition, added in CSS, will do the 'fadeIn' and the 'fadeOut' we can do in jQuery.
+				*/
+
+.sliderComplete button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1em 2em;
+  border: none;
+  background: #f0f0f080;
+  transition: all ease-in-out .5s;
+}
+
+.sliderComplete button[title="before"] {
+  left: 0;
+}
+
+.sliderComplete button[title="after"] {
+  right: 0;
+}
+
+.sliderComplete button.close {
+  opacity: 0;
+}
+
+.sliderComplete button.open {
+  opacity: .8;
+}
+
+
+/*Onclick*/
+
+
+/*The transition will allow the smooth animation of the slider.*/
+
+.turn {
+  margin-left: -75%;
+  transition: all .5s;
+}
+
+@media screen and (max-width:800px) {
+
+  /*
+	This prevents a potential overflow on the height and overflow allows the width for responsive. The scroll bar is not visible in any way on mobile.
+	*/
+  .sliderComplete .wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .slider {
+    width: 200%;
+  }
+
+  .slider li {
+    width: 14%;
+  }
+
+  .slider li .cover {
+    width: 100%;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  .sliderComplete .wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .slider {
+    width: 200%;
+  }
+
+  .slider li {
+    width: 14%;
+  }
+
+  .slider li .cover {
+    width: 100%;
+  }
+
+  .sliderComplete button,
+  .sliderComplete button.close,
+  .sliderComplete button.open {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.intro {
+    margin-top: 1.2%;
+    width: 100%;
+    height: 480px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.hashtag{
+    font-family: "Montserrat", sans-serif;
+    font-size: 90px;
+    color: white;
+    pointer-events: none;
+    position: absolute;
+    padding-top: 350px;
+    padding-left: 25px;
+}
+.category{
+    margin-top: 10px;
+}
+.category h1{
+}
+#highcutt{
+    position: absolute;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    margin-top: 420px;
+    margin-left: 10px;
+    user-select: none;
+    pointer-events: none;
+}
+#highcut{
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+}
+#space{
+    margin-left: 25px;
+}
+#lowcutt{
+    position: absolute;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    margin-top: 420px;
+    margin-left: 10px;
+    user-select: none;
+    pointer-events: none;
+}
+#lowcut{
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+}
+#parallax{
+    margin-top: 1.2%;
+    width: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+#shoe1{
+    width: 11.5%;
+    position: absolute;
+    margin-top: 4.7%;
+}
+#shoe2{
+    width: 11.5%;
+    position: absolute;
+    margin-top: 4.7%;
+    margin-right: 15%;
+}
+#shoe3{
+    width: 11.5%;
+    position: absolute;
+    margin-top: 4.7%;
+    margin-right: 30%;
+}
+#shoe4{
+    width: 11.5%;
+    position: absolute;
+    margin-top: 4.7%;
+    margin-right: 45%;
+}
